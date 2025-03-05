@@ -1,4 +1,11 @@
 import { useState, useEffect } from "react";
+import { Greeting } from "./greetings";
+
+const obj = {
+  email: "john.doe@example.com",
+  age: "29",
+  hobbies: ["read", "code", "sleep"],
+};
 
 export function HooksDemo() {
   const [count, setCount] = useState(0);
@@ -34,7 +41,7 @@ export function HooksDemo() {
           onChange={(e) => setName(e.target.value)}
           placeholder="Enter your name:"
         />
-        <p>Your name is: {name}</p>
+        <Greeting name={name} props={obj} />
       </div>
       <div>
         <h2>useEffect Example</h2>
